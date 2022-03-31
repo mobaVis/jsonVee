@@ -17,6 +17,14 @@ export default {
         liveView
     },
     setup() {
+        const virtualList = ref();
+        const data = reactive({
+            id: "5d42ac3d9c149c38248c8199"
+        });
+        const router = useRouter();
+        const selectById = async () => {
+            await HttpHelper.axiosGet("/detail/selectById",{id: data.id});
+        };
 
         const tableData = [
             {
@@ -41,8 +49,33 @@ export default {
             },
         ];
 
+        const toDetail = () => {
+            router.push('/detail');
+        };
+        let items = ref(DataItems);
+        const addItem = () => {
+            DataItems.push({
+                index: Math.random() * 1000 + 1,
+                name: "Brad" + Math.random() * 1000 + 1,
+                id: Date.now(),
+                desc: "html5",
+                size: 150,
+            });
+            console.log(DataItems);
+            // items.value = DataItems; // 这样不行
+            items.value = JSON.parse(JSON.stringify(DataItems));
+        };
+        const scrollFun = () => {
+            virtualList.value.scrollToOffset(50);
+        };
         return {
-            tableData
+            data,
+            items,
+            selectById,
+            toDetail,
+            addItem,
+            virtualList,
+            scrollFun
         };
     }
 };
