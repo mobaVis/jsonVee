@@ -4,6 +4,7 @@
     <div class="Overview">
       <b> Overview </b>
     </div>
+    <<<<<<< HEAD
 
     <div class="live">
       <b> Live View </b>
@@ -25,6 +26,63 @@
         src="../../assets/image/map.png"
         alt="empty image"
       >
+      =======
+      <h1>欢迎支持:</h1>
+      <img
+        src="../../assets/image/afb.jpg"
+        alt="empty image"
+      >
+      <img
+        src="../../assets/image/weixin.png"
+        alt="empty image"
+      >
+      <button @click="addItem">
+        添加数据
+      </button>
+      <button @click="scrollFun">
+        scrollto
+      </button>
+      <div class="container">
+        <virtual-list
+          ref="virtualList"
+          class="list-dynamic scroll-touch"
+          :data-key="'id'"
+          :data-sources="items"
+          :direction="'vertical'"
+          :estimate-size="80"
+          :keeps="5"
+          :item-class="'list-item-dynamic'"
+        >
+          <template #="{source}">
+            <div class="item-inner">
+              <div class="head">
+                <span># {{ source.index }}</span>
+                <span>{{ source.name }}</span>
+              </div>
+              <div class="desc">
+                {{ source.desc }}
+              </div>
+            </div>
+          </template>
+        </virtual-list>
+
+
+        <!-- <VirtualList
+        ref="virtualList"
+        class="h-screen overflow-y-auto w-full scroll-touch no-scrollbar"
+        :data-key="'_id'"
+        :data-sources="postItems"
+        :direction="'vertical'"
+        :estimate-size="556"
+        :item-class="'singlePostCard mx-5 mb-4'"
+        :keeps="5"
+        @scroll="scrollNearBy">
+          <template #="{source}">
+          ...
+          </template>
+        </VirtualList> -->
+        >>>>>>> ad55625 (feat: modify by virtual list test)
+      </div>
     </div>
   </div>
 </template>
