@@ -10,7 +10,6 @@ import 'element-plus/dist/index.css';
 import VirtualList from 'vue-virtual-list-v3';
 import VueQuillEditor from 'vue-quill-editor';
 
-console.log(VirtualList);
 
 window.d3 = d3;
 
