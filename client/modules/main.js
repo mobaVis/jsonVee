@@ -8,8 +8,6 @@ import 'element-plus/dist/index.css';
 
 
 
-console.log(VirtualList);
-
 window.d3 = d3;
 
 const router = createRouter({

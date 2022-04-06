@@ -5,6 +5,7 @@
       <b> Overview </b>
     </div>
     <<<<<<< HEAD
+    <<<<<<< HEAD
 
     <div class="live">
       <b> Live View </b>
@@ -82,6 +83,38 @@
           </template>
         </VirtualList> -->
         >>>>>>> ad55625 (feat: modify by virtual list test)
+      </div>
+      =======
+      <h1>欢迎支持:</h1>
+      <img
+        src="../../assets/image/afb.jpg"
+        alt="empty image"
+      >
+      <img
+        src="../../assets/image/weixin.png"
+        alt="empty image"
+      >
+      <div class="container">
+        <el-table
+          :data="tableData"
+          style="width: 100%"
+        >
+          <el-table-column
+            prop="date"
+            label="日期"
+            width="180"
+          />
+          <el-table-column
+            prop="name"
+            label="姓名"
+            width="180"
+          />
+          <el-table-column
+            prop="address"
+            label="地址"
+          />
+        </el-table>
+        >>>>>>> 657037f (fix: 添加element-plus支持,并修复Bug)
       </div>
     </div>
   </div>
