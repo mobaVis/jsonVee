@@ -7,6 +7,8 @@ import ElementPlus from 'element-plus';
 import 'element-plus/dist/index.css';
 
 
+import VirtualList from 'vue-virtual-list-v3';
+import VueQuillEditor from 'vue-quill-editor';
 
 console.log(VirtualList);
 
@@ -23,5 +25,7 @@ const myApp = createApp({
 myApp.use(router);
 
 myApp.use(ElementPlus);
+myApp.use(VirtualList);
+myApp.use(VueQuillEditor);
 
 myApp.mount("#app-wrapper");
