@@ -86,6 +86,7 @@
     "style-loader": "^0.13.1",
     "stylus": "^0.57.0",
     "terser-webpack-plugin": "^2.3.8",
+    "three": "^0.139.2",
     "unplugin-auto-import": "^0.6.9",
     "unplugin-element-plus": "^0.3.4",
     "unplugin-vue-components": "^0.18.5",

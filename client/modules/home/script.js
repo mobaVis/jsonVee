@@ -2,6 +2,7 @@
 // import { reactive, onMounted, ref} from 'vue';
 // import { ElTable, ElTableColumn } from "element-plus";
 // import 'element-plus/es/components/table/style/css';
+import liveView from '../../components/liveView.vue';
 
 
 export default {
@@ -13,6 +14,7 @@ export default {
     components:{
         // ElTable,
         // ElTableColumn,
+        liveView
     },
     setup() {
 
