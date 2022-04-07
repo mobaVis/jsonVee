@@ -43,12 +43,39 @@ export default {
       const geometry = new THREE.OctahedronGeometry();
       //   const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 }); // simplest surface with only color
       const material = new THREE.MeshBasicMaterial({
-        map: new THREE.TextureLoader().load("./img/copy.jpg"),
+        map: new THREE.TextureLoader().load("/img/copy.jpg"),
       }); // attach texture
       //   use Phong/ Lambert to adjust more advanced materials
       const oct = new THREE.Mesh(geometry, material);
       oct.position.set(-1, -1, 1);
       scene.add(oct);
+
+      // load sakura model
+      const loader = new GLTFLoader();
+      let sakura;
+      loader.load(
+        `/models/sakura/scene.gltf`,
+        function (gltf) {
+          gltf.scene.scale.setScalar(0.3);
+          // gltf.scene.rotation.y = -Math.PI / 2;
+
+          sakura = gltf.scene;
+          sakura.position.y = 2;
+          scene.add(sakura);
+          animate();
+          // console.log(sakura);
+        },
+        function (xhr) {
+          if (xhr.loaded < xhr.total) {
+            console.log((xhr.loaded / xhr.total) * 100 + "% loaded");
+          }
+          return;
+        },
+        function (error) {
+          console.log("An error happened while loading sakura");
+          console.error(error);
+        }
+      );
 
       // render LOOP
       function animate() {
@@ -57,13 +84,12 @@ export default {
 
         // rotate
         oct.rotation.y += 0.01;
-        // sakura.rotation.y += 0.01;
+        sakura.rotation.y += 0.01;
         // if(clock) mixer.update(clock.getDelta())
         // model.rotation.y += 0.01;
 
         renderer.render(scene, camera);
       }
-      animate();
     },
   },
 };
